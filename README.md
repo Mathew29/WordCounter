@@ -6,13 +6,14 @@
 
 ## Description
 
-_This program will receive a word and sentence from user input and check how many times that word is in that sentence._
+_This program will receive a word and sentence from user input.It will then check how many times that word is in that sentence. Then it will return the number of times that word was in the sentence._
 
 ## Specs
 |Behavior|Input|Output|
 |-|-|-|
 |Check to see if the given keyword returns|"justice"|"justice"|
-|Check a sentence for the full given keyword ("can" = "can"/ "can" != "cannot"/"can != "can't")|Given keyword:"can" Given sentence:"I can do this and I can do that but I cannot do it"|True|
+|Check a sentence for the given keyword|Given keyword:"can" Given sentence:"I can do this and I can do that but I cannot do it"|True|
+|Check to see if keyword and a word with keyword  within it does not count as Keyword|Keyword:"can" Keyword within Word:"cannot"|True|
 |Count how many times the given keyword is in a sentence|Given keyword:"can" Given sentence:"I can do this and can do that but I cannot do it"|2|
 
 
@@ -23,12 +24,6 @@ _This program will receive a word and sentence from user input and check how man
 * _Open the command line_
 * _Change the directory to the Desktop_
 * _Open the file WordCounter.Solution_
-* __
-
-
-## Known Bugs
-
-__
 
 ## Support and contact details
 

@@ -5,16 +5,27 @@ namespace WordCounter
 {
   public class WordCounter
   {
-    string KeyWord;
-
+    private string KeyWord;
+    private string sentJoin;
     List<string> sentence = new List<string>()
     {
-      {"I"},{"can"}, {"do"}, {"this"}, {"and"}, {"I"}, {"can"}, {"do"}, {"that"}, {"but"}, {"I"}, {"cannot"}, {"do"}, {"it"}
+      // {"I can do this and I can do that but I cannot do it"}
+      // {"I"},{"can"}, {"do"}, {"this"}, {"and"}, {"I"}, {"can"}, {"do"}, {"that"}, {"but"}, {"I"}, {"cannot"}, {"do"}, {"it"}
     };
 
-    public WordCounter(string keyWord)
+    public WordCounter(string keyWord, string userSent)
     {
       KeyWord = keyWord.ToLower();
+      sentJoin = userSent;
+      string[] sentSplit = userSent.Split(' ');
+      for(int i = 0; i < sentSplit.Length; i++)
+      {
+        sentence.Add(sentSplit[i]);
+      }
+    }
+    public string getSentence()
+    {
+      return sentJoin;
     }
 
     public string GetKeyWord()
@@ -33,6 +44,19 @@ namespace WordCounter
         }
       }
       return false;
+    }
+
+    public bool CheckSentenceForFullKeyword(string keyWord)
+    {
+      string input = keyWord.ToLower();
+      foreach(string item in sentence)
+      {
+        if (item.ToLower() == input)
+        {
+          return false;
+        }
+      }
+      return true;
     }
 
     public int RepeatCounter(string keyWord)

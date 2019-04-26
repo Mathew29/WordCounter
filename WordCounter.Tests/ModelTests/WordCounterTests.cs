@@ -19,7 +19,7 @@ namespace WordCounter.Tests
     {
       string test = "this is a test sentence";
       WordCounter wordCounter = new WordCounter("can", test);
-      Assert.AreEqual(test, wordCounter.getSentence());
+      Assert.AreEqual(test, wordCounter.GetSentence());
     }
     [TestMethod]
     public void TestSentenceForKeyword()

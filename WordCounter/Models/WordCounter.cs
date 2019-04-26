@@ -5,8 +5,11 @@ namespace WordCounter
 {
   public class WordCounter
   {
+    //User input word and User input sentece
     private string KeyWord;
     private string sentJoin;
+
+    //List that contains the sentece
     List<string> sentence = new List<string>()
     {
       // {"I can do this and I can do that but I cannot do it"}
@@ -15,29 +18,39 @@ namespace WordCounter
 
     public WordCounter(string keyWord, string userSent)
     {
+      //change user input word to all lower case for test purposes
       KeyWord = keyWord.ToLower();
       sentJoin = userSent;
+      //Break up sentece into a string array
       string[] sentSplit = userSent.Split(' ');
+      //Adds the string array of sentence to the List
       for(int i = 0; i < sentSplit.Length; i++)
       {
         sentence.Add(sentSplit[i]);
       }
     }
-    public string getSentence()
-    {
-      return sentJoin;
-    }
 
+    //Test for UserInput word
     public string GetKeyWord()
     {
       return KeyWord;
     }
+    //Test for UserInput sentece
+    public string GetSentence()
+    {
+      return sentJoin;
+    }
 
+    //Test to check if the keyword is inside the sentence
     public bool CheckSentenceForKeyword(string keyWord)
     {
+      //changes user input word to lowercase
       string input = keyWord.ToLower();
+      //Loop through every word in the sentence
       foreach(string item in sentence)
       {
+        //turns all words in the list to lowercase
+        //checks to see if the word in the list matches with the keyWord
         if (item.ToLower() == input)
         {
           return true;
@@ -45,12 +58,15 @@ namespace WordCounter
       }
       return false;
     }
-
+    //Test to check that only the full keywords return and not words with the keyword inside them
     public bool CheckSentenceForFullKeyword(string keyWord)
     {
+      //changes user input word to lowercase
       string input = keyWord.ToLower();
       foreach(string item in sentence)
       {
+        //turns all words in the list to lowercase
+        //checks to see if the word in the list matches with the keyWord
         if (item.ToLower() == input)
         {
           return false;
@@ -58,15 +74,19 @@ namespace WordCounter
       }
       return true;
     }
-
+    //Test to check how many keywords are inside the sentence
     public int RepeatCounter(string keyWord)
     {
+      //changes user input word to lowercase
       string input = keyWord.ToLower();
       int counter = 0;
       foreach(string item in sentence)
       {
+        //turns all words in the list to lowercase
+        //checks to see if the word in the list matches with the keyWord
         if (item.ToLower() == input)
         {
+          //Add one for every match of Keyword
           counter +=1;
         }
       }
@@ -74,22 +94,3 @@ namespace WordCounter
     }
   }
 }
-
-
-
-
-
-
-// if (item.Length == KeyWord.Length)
-// {
-//   char[] checkKeyWord = KeyWord.ToCharArray();
-//   char[] checkListWord = item.ToCharArray();
-//
-//   for (int i = 0; i < checkKeyWord.Length; i++)
-//   {
-//     if (checkKeyWord[i] == checkListWord[i])
-//     {
-//       return true;
-//     }
-//   }
-// }

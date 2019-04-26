@@ -12,9 +12,9 @@ _This program will receive a word and sentence from user input and check how man
 |Behavior|Input|Output|
 |-|-|-|
 |Check to see if the given keyword returns|"justice"|"justice"|
-|Check a sentence if the given keyword is inside the sentence|Given keyword:"can" Given sentence:"I can do this and I can do that"|True|
+|Check a sentence if the full given keyword is inside the sentence|Given keyword:"can" Given sentence:"I can do this and I can do that"|True|
 |Count how many times the given keyword is in a sentence|Given keyword:"can" Given sentence:"I can do this and can do that"|2|
-|Check the sentence for full keyword matches|Given keyword:"can" Given sentence:"I can do this and I can do that"/Given keyword:"can" Given sentence:"I can do this and I can do that but cannot do that"|True/False|
+
 
 
 ## Setup/Installation Requirements

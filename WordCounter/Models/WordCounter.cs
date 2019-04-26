@@ -14,7 +14,7 @@ namespace WordCounter
 
     public WordCounter(string keyWord)
     {
-      KeyWord = keyWord;
+      KeyWord = keyWord.ToLower();
     }
 
     public string GetKeyWord()
@@ -27,7 +27,7 @@ namespace WordCounter
       string input = keyWord.ToLower();
       foreach(string item in sentence)
       {
-        if (item == input)
+        if (item.ToLower() == input)
         {
           return true;
         }
@@ -41,7 +41,7 @@ namespace WordCounter
       int counter = 0;
       foreach(string item in sentence)
       {
-        if (item == input)
+        if (item.ToLower() == input)
         {
           counter +=1;
         }

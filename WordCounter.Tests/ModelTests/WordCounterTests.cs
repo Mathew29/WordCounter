@@ -10,14 +10,21 @@ namespace WordCounter.Tests
     [TestMethod]
     public void TestKeywordReturns()
     {
-      WordCounter wordCounter = new WordCounter("bear");
-      Assert.AreEqual("bear", wordCounter.GetKeyWord());
+      WordCounter wordCounter = new WordCounter("can");
+      Assert.AreEqual("can", wordCounter.GetKeyWord());
     }
     [TestMethod]
     public void TestSentenceForKeyword()
     {
-      WordCounter wordCounter = new WordCounter("bear");
-      Assert.AreEqual(true, wordCounter.CheckSentenceForKeyword("bear"));
+      WordCounter wordCounter = new WordCounter("can");
+      Assert.AreEqual(true, wordCounter.CheckSentenceForKeyword("can"));
     }
+    [TestMethod]
+    public void CheckHowManyTimesKeywordIsInSentence()
+    {
+      WordCounter wordCounter = new WordCounter("can");
+      Assert.AreEqual(2, wordCounter.RepeatCounter("can"));
+    }
+
   }
 }

@@ -9,7 +9,7 @@ namespace WordCounter
 
     List<string> sentence = new List<string>()
     {
-      {"A"},{"big"}, {"bear"}
+      {"I"},{"can"}, {"do"}, {"this"}, {"and"}, {"I"}, {"can"}, {"do"}, {"that"},
     };
 
     public WordCounter(string keyWord)
@@ -32,6 +32,19 @@ namespace WordCounter
         }
       }
       return false;
+    }
+
+    public int RepeatCounter(string keyWord)
+    {
+      int counter = 0;
+      foreach(string item in sentence)
+      {
+        if (item == keyWord)
+        {
+          counter +=1;
+        }
+      }
+      return counter;
     }
   }
 }

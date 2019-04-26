@@ -11,10 +11,10 @@ _This program will receive a word and sentence from user input and check how man
 ## Specs
 |Behavior|Input|Output|
 |-|-|-|
-|Check to see if the given keyword returns|"bear"|"bear"|
-|Check a sentence if the given keyword is inside the sentence|Given keyword:"bear" Given sentence:"I see a bear"|True|
+|Check to see if the given keyword returns|"can"|"can"|
+|Check a sentence if the given keyword is inside the sentence|Given keyword:"can" Given sentence:"I can do this and I can do that"|True|
 |Count how many times the given keyword is in a sentence|Given keyword:"can" Given sentence:"I can do this and can do that"|2|
-|Check the sentence for full keyword matches|Given keyword:"bear" Given sentence:"A big bear"/Given keyword:"tree" Given sentence:"A tall treehouse"|True/False|
+|Check the sentence for full keyword matches|Given keyword:"can" Given sentence:"I can do this and I can do that"/Given keyword:"can" Given sentence:"I can do this and I can do that"|True/False|
 
 
 ## Setup/Installation Requirements

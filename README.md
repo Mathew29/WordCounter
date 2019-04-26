@@ -1,12 +1,12 @@
 # _Word Counter_
 
-#### _This program will count how many times a given word is in a sentence, 4/26/2019_
+#### _This program will count how many times a given word is in a sentence. 4/26/2019_
 
 #### By _**Mathew Akre**_
 
 ## Description
 
-_This program will receive a word and sentence from user input.It will then check how many times that word is in that sentence. Then it will return the number of times that word was in the sentence._
+_This program will receive a word and sentence from user input. It will then check how many times that word is in that sentence. Then it will return the number of times that word was in the sentence._
 
 ## Specs
 |Behavior|Input|Output|

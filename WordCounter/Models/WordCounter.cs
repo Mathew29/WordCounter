@@ -7,7 +7,7 @@ namespace WordCounter
   {
     //User input word and User input sentece
     private string KeyWord;
-    private string sentJoin;
+    private string sentenceJoin;
 
     //List that contains the sentece
     List<string> sentence = new List<string>()
@@ -20,13 +20,13 @@ namespace WordCounter
     {
       //change user input word to all lower case for test purposes
       KeyWord = keyWord.ToLower();
-      sentJoin = userSent;
+      sentenceJoin = userSentence;
       //Break up sentece into a string array
-      string[] sentSplit = userSent.Split(' ');
+      string[] sentenceSplit = userSentence.Split(' ');
       //Adds the string array of sentence to the List
-      for(int i = 0; i < sentSplit.Length; i++)
+      for(int i = 0; i < sentenceSplit.Length; i++)
       {
-        sentence.Add(sentSplit[i]);
+        sentence.Add(sentenceSplit[i]);
       }
     }
 
@@ -38,7 +38,7 @@ namespace WordCounter
     //Test for UserInput sentece
     public string GetSentence()
     {
-      return sentJoin;
+      return sentenceJoin;
     }
 
     //Test to check if the keyword is inside the sentence

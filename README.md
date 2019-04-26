@@ -12,8 +12,9 @@ _This program will receive a word and sentence from user input.It will then chec
 |Behavior|Input|Output|
 |-|-|-|
 |Check to see if the given keyword returns|"justice"|"justice"|
+|Check to see if the given sentence returns|"this is a test sentence"|"this is a test sentence"|
 |Check a sentence for the given keyword|Given keyword:"can" Given sentence:"I can do this and I can do that but I cannot do it"|True|
-|Check to see if keyword and a word with keyword  within it does not count as Keyword|Keyword:"can" Keyword within Word:"cannot"|True|
+|Check to see if keyword and a word with keyword  within it does not count as Keyword|Keyword:"can" Keyword within Word:"cannot"|True (can != cannot)|
 |Count how many times the given keyword is in a sentence|Given keyword:"can" Given sentence:"I can do this and can do that but I cannot do it"|2|
 
 

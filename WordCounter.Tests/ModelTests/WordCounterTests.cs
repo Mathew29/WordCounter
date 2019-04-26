@@ -13,6 +13,14 @@ namespace WordCounter.Tests
       WordCounter wordCounter = new WordCounter("Justice", "hold sentence");
       Assert.AreEqual("justice", wordCounter.GetKeyWord());
     }
+
+    [TestMethod]
+    public void CheckReturnedSentence()
+    {
+      string test = "this is a test sentence";
+      WordCounter wordCounter = new WordCounter("can", test);
+      Assert.AreEqual(test, wordCounter.getSentence());
+    }
     [TestMethod]
     public void TestSentenceForKeyword()
     {
@@ -34,13 +42,6 @@ namespace WordCounter.Tests
       Assert.AreEqual(2, wordCounter.RepeatCounter("can"));
     }
 
-    [TestMethod]
-    public void CheckReturnedSentence()
-    {
-      string test = "this is a test sentence";
-      WordCounter wordCounter = new WordCounter("can", test);
-      Assert.AreEqual(test, wordCounter.getSentence());
-    }
 
   }
 }

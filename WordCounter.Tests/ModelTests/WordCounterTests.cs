@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WordCounter;
+using System.Collections.Generic;
 
 namespace WordCounter.Tests
 {
@@ -11,6 +12,12 @@ namespace WordCounter.Tests
     {
       WordCounter wordCounter = new WordCounter("bear");
       Assert.AreEqual("bear", wordCounter.GetKeyWord());
+    }
+    [TestMethod]
+    public void TestSentenceForKeyword()
+    {
+      WordCounter wordCounter = new WordCounter("bear");
+      Assert.AreEqual(true, wordCounter.CheckSentenceForKeyword("bear"));
     }
   }
 }

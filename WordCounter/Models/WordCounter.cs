@@ -9,7 +9,7 @@ namespace WordCounter
 
     List<string> sentence = new List<string>()
     {
-      {"I"},{"can"}, {"do"}, {"this"}, {"and"}, {"I"}, {"can"}, {"do"}, {"that"},
+      {"I"},{"can"}, {"do"}, {"this"}, {"and"}, {"I"}, {"can"}, {"do"}, {"that"}, {"but"}, {"I"}, {"cannot"}, {"do"}, {"it"}
     };
 
     public WordCounter(string keyWord)
@@ -24,9 +24,10 @@ namespace WordCounter
 
     public bool CheckSentenceForKeyword(string keyWord)
     {
+      string input = keyWord.ToLower();
       foreach(string item in sentence)
       {
-        if (item == keyWord)
+        if (item == input)
         {
           return true;
         }
@@ -36,10 +37,11 @@ namespace WordCounter
 
     public int RepeatCounter(string keyWord)
     {
+      string input = keyWord.ToLower();
       int counter = 0;
       foreach(string item in sentence)
       {
-        if (item == keyWord)
+        if (item == input)
         {
           counter +=1;
         }

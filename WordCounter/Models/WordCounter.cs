@@ -6,8 +6,8 @@ namespace WordCounter
   public class WordCounter
   {
     //User input word and User input sentece
-    private string KeyWord;
-    private string sentenceJoin;
+    private string _keyWord;
+    private string _sentenceJoin;
 
     //List that contains the sentece
     List<string> sentence = new List<string>()
@@ -16,11 +16,11 @@ namespace WordCounter
       // {"I"},{"can"}, {"do"}, {"this"}, {"and"}, {"I"}, {"can"}, {"do"}, {"that"}, {"but"}, {"I"}, {"cannot"}, {"do"}, {"it"}
     };
 
-    public WordCounter(string keyWord, string userSent)
+    public WordCounter(string keyWord, string userSentence)
     {
       //change user input word to all lower case for test purposes
-      KeyWord = keyWord.ToLower();
-      sentenceJoin = userSentence;
+      _keyWord = keyWord.ToLower();
+      _sentenceJoin = userSentence;
       //Break up sentece into a string array
       string[] sentenceSplit = userSentence.Split(' ');
       //Adds the string array of sentence to the List
@@ -33,12 +33,12 @@ namespace WordCounter
     //Test for UserInput word
     public string GetKeyWord()
     {
-      return KeyWord;
+      return _keyWord;
     }
     //Test for UserInput sentece
     public string GetSentence()
     {
-      return sentenceJoin;
+      return _sentenceJoin;
     }
 
     //Test to check if the keyword is inside the sentence
@@ -78,7 +78,7 @@ namespace WordCounter
     public int RepeatCounter(string keyWord)
     {
       //changes user input word to lowercase
-      string input = keyWord.ToLower();
+      string input = GetKeyWord().ToLower();
       int counter = 0;
       foreach(string item in sentence)
       {

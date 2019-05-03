@@ -10,7 +10,7 @@ namespace WordCounter.Tests
     [TestMethod]
     public void TestKeywordReturns()
     {
-      WordCounter wordCounter = new WordCounter("Justice", "hold sentence");
+      Words wordCounter = new Words("Justice", "hold sentence");
       Assert.AreEqual("justice", wordCounter.GetKeyWord());
     }
 
@@ -18,27 +18,27 @@ namespace WordCounter.Tests
     public void CheckReturnedSentence()
     {
       string test = "this is a test sentence";
-      WordCounter wordCounter = new WordCounter("can", test);
+      Words wordCounter = new Words("can", test);
       Assert.AreEqual(test, wordCounter.GetSentence());
     }
     [TestMethod]
     public void TestSentenceForKeyword()
     {
-      WordCounter wordCounter = new WordCounter("Can", "I can do this and I can do that but I cannot do it");
+      Words wordCounter = new Words("Can", "I can do this and I can do that but I cannot do it");
 
       Assert.AreEqual(true, wordCounter.CheckSentenceForKeyword("Can"));
     }
     [TestMethod]
     public void TestSentenceForFullKeyword()
     {
-      WordCounter wordCounter = new WordCounter("Can", "Cannot");
+      Words wordCounter = new Words("Can", "Cannot");
 
       Assert.AreEqual(true, wordCounter.CheckSentenceForFullKeyword("Can"));
     }
     [TestMethod]
     public void CheckHowManyTimesKeywordIsInSentence()
     {
-      WordCounter wordCounter = new WordCounter("can", "I can do this and I can do that but I cannot do it");
+      Words wordCounter = new Words("can", "I can do this and I can do that but I cannot do it");
       Assert.AreEqual(2, wordCounter.GetCounter("can"));
     }
 

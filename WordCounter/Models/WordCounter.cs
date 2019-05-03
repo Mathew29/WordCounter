@@ -3,27 +3,27 @@ using System.Collections.Generic;
 
 namespace WordCounter.Models
 {
-  public class WordCounter
+  public class Words
   {
     //User input word and User input sentece
     private string _keyWord;
     private string _userSentence;
+    private int _id;
+    private static List<Words> _instances = new List<Words> {};
     private string[] sentenceSplit;
     private int _counter;
-    // private int _id;
-    // private static List<Item> _instances = new List<Item> {};
 
 
-    public WordCounter(string keyWord, string userSentence)
+    public Words(string keyWord, string userSentence)
     {
       //change user input word to all lower case for test purposes
       _keyWord = keyWord.ToLower();
       _userSentence = userSentence;
+      _instances.Add(this);
+      _id = _instances.Count;
       //Break up sentece into a string array
       sentenceSplit = userSentence.Split(' ');
       _counter = 0;
-      // _instances.Add(this.keyWord);
-      // _id = _instances.Count;
     }
     //Test for UserInput word
     public string GetKeyWord()
@@ -40,26 +40,26 @@ namespace WordCounter.Models
     {
       return _counter;
     }
+    public int GetId()
+    {
+      return _id;
+    }
 
-    // public int GetId()
-    // {
-    //   return _id;
-    // }
-    //
-    // public static List<Item> GetAll()
-    // {
-    //   return _instances;
-    // }
-    //
-    // public static void ClearAll()
-    // {
-    //   _instances.Clear();
-    // }
-    //
-    // public static WordCounter Find(int searchId)
-    // {
-    //   return _instances[searchId-1];
-    // }
+    public static List<Words> GetAll()
+    {
+      return _instances;
+    }
+
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
+
+    public static Words Find(int searchId)
+    {
+      return _instances[searchId-1];
+    }
+
 
     //Test to check if the keyword is inside the sentence
     public bool CheckSentenceForKeyword(string keyWord)

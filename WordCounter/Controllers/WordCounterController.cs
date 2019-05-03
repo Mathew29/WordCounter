@@ -10,7 +10,6 @@ namespace WordCounter.Controllers
     [HttpGet("/wordcounters")]
     public ActionResult Index()
     {
-      List<Words> allWords = Words.GetAll();
       return View();
     }
 
@@ -19,27 +18,6 @@ namespace WordCounter.Controllers
     {
       return View();
     }
-    //
-    [HttpPost("/wordcounters")]
-    public ActionResult Create(string keyWord, string userSentence)
-    {
-      Words myWord = new Words(keyWord, userSentence);
-      return RedirectToAction("Index");
-    }
-    //
-    [HttpGet("/wordcounters/{id}")]
-    public ActionResult Show(int id)
-    {
-      Words word = Words.Find(id);
-      return View(word);
-    }
-    //
-    // [HttpGet("/wordcounters/delete")]
-    // public ActionResult DeleteAll()
-    // {
-    //   WordCounter.ClearAll();
-    //   return View();
-    // }
 
   }
 }

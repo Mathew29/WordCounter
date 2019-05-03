@@ -1,16 +1,6 @@
 @using WordCounter.Models;
 
 <h1>Word Counter</h1>
-<ul>
-@if (Model.Count == 0)
-{
-  <p>You have no items in your to do list!</p>
-}
-@if(Model.Count != 0)
-{
-  @foreach (Words word in Model)
-  {
-    <li><a href='/wordcounters/@word.GetId()'>@word.GetKeyWord()</a></li>
-  }
-}
+
+
 <a href="/wordcounters/new">Add a new Word and Sentence.</a>

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace WordCounter
+namespace WordCounter.Models
 {
   public class WordCounter
   {
@@ -9,6 +9,10 @@ namespace WordCounter
     private string _keyWord;
     private string _userSentence;
     private string[] sentenceSplit;
+    private int _counter;
+    // private int _id;
+    // private static List<Item> _instances = new List<Item> {};
+
 
     public WordCounter(string keyWord, string userSentence)
     {
@@ -17,7 +21,10 @@ namespace WordCounter
       _userSentence = userSentence;
       //Break up sentece into a string array
       sentenceSplit = userSentence.Split(' ');
-
+      _counter = 0;
+      // _instances.Add(this.keyWord);
+      // _id = _instances.Count;
+    }
     //Test for UserInput word
     public string GetKeyWord()
     {
@@ -28,6 +35,31 @@ namespace WordCounter
     {
       return _userSentence;
     }
+
+    public int GetCounter()
+    {
+      return _counter;
+    }
+
+    // public int GetId()
+    // {
+    //   return _id;
+    // }
+    //
+    // public static List<Item> GetAll()
+    // {
+    //   return _instances;
+    // }
+    //
+    // public static void ClearAll()
+    // {
+    //   _instances.Clear();
+    // }
+    //
+    // public static WordCounter Find(int searchId)
+    // {
+    //   return _instances[searchId-1];
+    // }
 
     //Test to check if the keyword is inside the sentence
     public bool CheckSentenceForKeyword(string keyWord)
@@ -67,7 +99,6 @@ namespace WordCounter
     {
       //changes user input word to lowercase
       string input = GetKeyWord().ToLower();
-      int counter = 0;
       foreach(string item in sentenceSplit)
       {
         //turns all words in the list to lowercase
@@ -75,10 +106,10 @@ namespace WordCounter
         if (item.ToLower() == input)
         {
           //Add one for every match of Keyword
-          counter +=1;
+          _counter +=1;
         }
       }
-      return counter;
+      return _counter;
     }
   }
 }

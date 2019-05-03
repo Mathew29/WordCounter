@@ -39,7 +39,7 @@ namespace WordCounter.Tests
     public void CheckHowManyTimesKeywordIsInSentence()
     {
       WordCounter wordCounter = new WordCounter("can", "I can do this and I can do that but I cannot do it");
-      Assert.AreEqual(2, wordCounter.RepeatCounter("can"));
+      Assert.AreEqual(2, wordCounter.GetCounter("can"));
     }
 
 

@@ -7,28 +7,16 @@ namespace WordCounter
   {
     //User input word and User input sentece
     private string _keyWord;
-    private string _sentenceJoin;
-
-    //List that contains the sentece
-    List<string> sentence = new List<string>()
-    {
-      // {"I can do this and I can do that but I cannot do it"}
-      // {"I"},{"can"}, {"do"}, {"this"}, {"and"}, {"I"}, {"can"}, {"do"}, {"that"}, {"but"}, {"I"}, {"cannot"}, {"do"}, {"it"}
-    };
+    private string _userSentence;
+    private string[] sentenceSplit;
 
     public WordCounter(string keyWord, string userSentence)
     {
       //change user input word to all lower case for test purposes
       _keyWord = keyWord.ToLower();
-      _sentenceJoin = userSentence;
+      _userSentence = userSentence;
       //Break up sentece into a string array
-      string[] sentenceSplit = userSentence.Split(' ');
-      //Adds the string array of sentence to the List
-      for(int i = 0; i < sentenceSplit.Length; i++)
-      {
-        sentence.Add(sentenceSplit[i]);
-      }
-    }
+      sentenceSplit = userSentence.Split(' ');
 
     //Test for UserInput word
     public string GetKeyWord()
@@ -38,7 +26,7 @@ namespace WordCounter
     //Test for UserInput sentece
     public string GetSentence()
     {
-      return _sentenceJoin;
+      return _userSentence;
     }
 
     //Test to check if the keyword is inside the sentence
@@ -47,7 +35,7 @@ namespace WordCounter
       //changes user input word to lowercase
       string input = keyWord.ToLower();
       //Loop through every word in the sentence
-      foreach(string item in sentence)
+      foreach(string item in sentenceSplit)
       {
         //turns all words in the list to lowercase
         //checks to see if the word in the list matches with the keyWord
@@ -63,7 +51,7 @@ namespace WordCounter
     {
       //changes user input word to lowercase
       string input = keyWord.ToLower();
-      foreach(string item in sentence)
+      foreach(string item in sentenceSplit)
       {
         //turns all words in the list to lowercase
         //checks to see if the word in the list matches with the keyWord
@@ -80,7 +68,7 @@ namespace WordCounter
       //changes user input word to lowercase
       string input = GetKeyWord().ToLower();
       int counter = 0;
-      foreach(string item in sentence)
+      foreach(string item in sentenceSplit)
       {
         //turns all words in the list to lowercase
         //checks to see if the word in the list matches with the keyWord

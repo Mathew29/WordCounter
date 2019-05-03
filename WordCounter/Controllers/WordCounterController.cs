@@ -8,9 +8,10 @@ namespace WordCounter.Controllers
   public class WordCounterController : Controller
   {
     [HttpGet("/wordcounters")]
-    public ActionResult Index()
+    public ActionResult Index(string newKeyWord, string newSentence)
     {
-      return View();
+      Words myWords = new Words(newKeyWord, newSentence);
+      return View(myWords);
     }
 
     [HttpGet("/wordcounters/new")]
@@ -18,6 +19,5 @@ namespace WordCounter.Controllers
     {
       return View();
     }
-
   }
 }

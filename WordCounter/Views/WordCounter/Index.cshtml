@@ -1,6 +1,7 @@
 @using WordCounter.Models;
-
+@{
+  Layout = "_Layout";
+}
 <h1>Word Counter</h1>
-
-
-<a href="/wordcounters/new">Add a new Word and Sentence.</a>
+<h2> Your word @Model.GetKeyWord() is in the sentence @Model.GetCounter() time(s) in the sentence @Model.GetSentence()</h2>
+<a href="/wordcounters/new">Input a new Word and Sentence.</a>

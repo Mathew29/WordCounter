@@ -27,10 +27,20 @@ namespace WordCounter.Models
       return _keyWord;
     }
 
+    public void SetKeyWord(string newKeyWord)
+    {
+      _keyWord = newKeyWord;
+    }
+
     //Test for UserInput sentece
     public string GetSentence()
     {
       return _userSentence;
+    }
+
+    public void SetSentence(string newSentence)
+    {
+      _userSentence = newSentence;
     }
 
     public int GetCounter()
@@ -42,7 +52,6 @@ namespace WordCounter.Models
     {
       //changes user input word to lowercase
 
-      int _counter = 0;
       foreach(string item in sentenceSplit)
       {
         //turns all words in the list to lowercase

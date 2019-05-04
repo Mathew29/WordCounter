@@ -3,6 +3,8 @@
   Layout = "_Layout";
 }
 <h1>Word Counter</h1>
+
+<ul>
 @if (Model.Count == 0)
 {
   <p>You have nothing inputted!</p>
@@ -11,8 +13,9 @@
 {
   @foreach (Counter count in Model)
   {
-    <a href='/counter/@count.Id'>"@count.KeyWord" appeared in "@count.UserSentence" @count.Matches times</a>
+    <li><a href='/counter/@count.Id'>"@count.KeyWord" appeared in "@count.UserSentence" @count.Matches times</a></li>
     <a href='/counter/@count.Id/delete'> Delete</a>
   }
 }
+</ul>
 <a href="/counter/new">Input a new Word and Sentence.</a>

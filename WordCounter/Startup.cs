@@ -26,7 +26,6 @@ namespace WordCounter
     public void Configure(IApplicationBuilder app)
     {
       app.UseDeveloperExceptionPage();
-      app.UseStaticFiles();
       app.UseMvc(routes =>
       {
         routes.MapRoute(
@@ -34,9 +33,10 @@ namespace WordCounter
           template: "{controller=Home}/{action=Index}/{id?}");
       });
 
+      app.UseStaticFiles();
         app.Run(async (context) =>
         {
-          await context.Response.WriteAsync("Something went wrong!");
+          await context.Response.WriteAsync("You're not supposed to be here!!");
         });
 
     }

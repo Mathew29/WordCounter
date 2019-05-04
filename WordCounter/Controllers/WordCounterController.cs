@@ -22,7 +22,7 @@ namespace WordCounter.Controllers
      public ActionResult Create(string keyWord, string userSentence)
     {
       Counter newCounter = new Counter(keyWord, userSentence);
-      return RedirectToAction("Index");
+      return RedirectToAction("Index", newCounter);
     }
 
     [HttpGet("counter/{id}")]

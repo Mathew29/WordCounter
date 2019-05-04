@@ -7,17 +7,36 @@ namespace WordCounter.Controllers
 {
   public class WordCounterController : Controller
   {
-    [HttpGet("/wordcounters")]
-    public ActionResult Index(string newKeyWord, string newSentence)
+    [HttpGet("/counter")]
+    public ActionResult Index()
     {
-      Words myWords = new Words(newKeyWord, newSentence);
-      return View(myWords);
+      return View();
     }
 
-    [HttpGet("/wordcounters/new")]
+    [HttpGet("/counter/new")]
     public ActionResult New()
     {
       return View();
     }
+    [HttpPost("/counter")]
+     public ActionResult Create(string keyWord, string userSentence)
+    {
+      Counter newCounter = new Counter(keyWord, userSentence);
+      return RedirectToAction("Index");
+    }
+
+    [HttpGet("counter/{id}")]
+    public ActionResult Show(int id)
+    {
+      Counter count = Counter.Find(id);
+      return View(count);
+    }
+
+    // [HttpPost("/counter/delete")]
+    // public ActionResult DeleteAll()
+    // {
+    //   Counter.Clear();
+    //   return View();
+    // }
   }
 }

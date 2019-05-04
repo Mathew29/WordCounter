@@ -3,66 +3,52 @@ using System.Collections.Generic;
 
 namespace WordCounter.Models
 {
-  public class Words
+  public class Counter
   {
     //User input word and User input sentece
-    private string _keyWord;
-    private string _userSentence;
-    private string[] sentenceSplit;
-    private int _counter;
+    public string KeyWord {get; set;}
+    public string UserSentence {get; set;}
+    public int Matches {get;}
+    public static List<Counter> MatchList {get; set;} = new List<Counter> {};
+    public int Id {get; set;}
 
 
-    public Words(string keyWord, string userSentence)
+    public Counter(string keyWord, string userSentence)
     {
       //change user input word to all lower case for test purposes
-      _keyWord = keyWord.ToLower();
-      _userSentence = userSentence;
-      //Break up sentece into a string array
-      sentenceSplit = userSentence.Split(' ');
-      _counter = 0;
-    }
-    //Test for UserInput word
-    public string GetKeyWord()
-    {
-      return _keyWord;
-    }
-
-    public void SetKeyWord(string newKeyWord)
-    {
-      _keyWord = newKeyWord;
-    }
-
-    //Test for UserInput sentece
-    public string GetSentence()
-    {
-      return _userSentence;
-    }
-
-    public void SetSentence(string newSentence)
-    {
-      _userSentence = newSentence;
-    }
-
-    public int GetCounter()
-    {
-      return _counter;
+      string lowerCaseKeyWord = keyWord.ToLower();
+      KeyWord = lowerCaseKeyWord;
+      UserSentence = userSentence;
+      Matches = this.RepeatCounter();
+      MatchList.Add(this);
+      Id = MatchList.Count;
     }
 
     public int RepeatCounter()
     {
       //changes user input word to lowercase
 
-      foreach(string item in sentenceSplit)
+      int counter = 0;
+      string[] sentenceSplit = UserSentence.Split(' ');
+      foreach(string word in sentenceSplit)
       {
-        //turns all words in the list to lowercase
-        //checks to see if the word in the list matches with the keyWord
-        if (item.ToLower() == GetKeyWord())
+        if (word.ToLower() == KeyWord)
         {
           //Add one for every match of Keyword
-          _counter +=1;
+          counter +=1;
         }
       }
-      return _counter;
+      return counter;
+    }
+
+    public static void ClearAll()
+    {
+      MatchList.Clear();
+    }
+
+    public static Counter Find(int searchId)
+    {
+      return MatchList[searchId-1];
     }
 
 

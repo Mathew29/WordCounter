@@ -5,12 +5,12 @@
 // namespace WordCounter.Tests
 // {
 //   [TestClass]
-//   public class WordsTest
+//   public class CounterTest
 //   {
 //     [TestMethod]
 //     public void TestKeywordReturns()
 //     {
-//       Words wordCounter = new Words("Justice", "hold sentence");
+//       Counter wordCounter = new Counter("Justice", "hold sentence");
 //       Assert.AreEqual("justice", wordCounter.GetKeyWord());
 //     }
 //
@@ -18,27 +18,27 @@
 //     public void CheckReturnedSentence()
 //     {
 //       string test = "this is a test sentence";
-//       Words wordCounter = new Words("can", test);
+//       Counter wordCounter = new Counter("can", test);
 //       Assert.AreEqual(test, wordCounter.GetSentence());
 //     }
 //     [TestMethod]
 //     public void TestSentenceForKeyword()
 //     {
-//       Words wordCounter = new Words("Can", "I can do this and I can do that but I cannot do it");
+//       Counter wordCounter = new Counter("Can", "I can do this and I can do that but I cannot do it");
 //
 //       Assert.AreEqual(true, wordCounter.CheckSentenceForKeyword("Can"));
 //     }
 //     [TestMethod]
 //     public void TestSentenceForFullKeyword()
 //     {
-//       Words wordCounter = new Words("Can", "Cannot");
+//       Counter wordCounter = new Counter("Can", "Cannot");
 //
 //       Assert.AreEqual(true, wordCounter.CheckSentenceForFullKeyword("Can"));
 //     }
 //     [TestMethod]
 //     public void CheckHowManyTimesKeywordIsInSentence()
 //     {
-//       Words wordCounter = new Words("can", "I can do this and I can do that but I cannot do it");
+//       Counter wordCounter = new Counter("can", "I can do this and I can do that but I cannot do it");
 //       Assert.AreEqual(2, wordCounter.GetCounter("can"));
 //     }
 //

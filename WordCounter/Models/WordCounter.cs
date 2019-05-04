@@ -5,7 +5,6 @@ namespace WordCounter.Models
 {
   public class Counter
   {
-    //User input word and User input sentece
     public string KeyWord {get; set;}
     public string UserSentence {get; set;}
     public int Matches {get;}
@@ -15,7 +14,6 @@ namespace WordCounter.Models
 
     public Counter(string keyWord, string userSentence)
     {
-      //change user input word to all lower case for test purposes
       string lowerCaseKeyWord = keyWord.ToLower();
       KeyWord = lowerCaseKeyWord;
       UserSentence = userSentence;
@@ -26,15 +24,12 @@ namespace WordCounter.Models
 
     public int RepeatCounter()
     {
-      //changes user input word to lowercase
-
       int counter = 0;
       string[] sentenceSplit = UserSentence.Split(' ');
       foreach(string word in sentenceSplit)
       {
         if (word.ToLower() == KeyWord)
         {
-          //Add one for every match of Keyword
           counter +=1;
         }
       }

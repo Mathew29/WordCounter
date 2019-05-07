@@ -10,7 +10,8 @@ namespace WordCounter.Controllers
     [HttpGet("/counter")]
     public ActionResult Index()
     {
-      return View();
+      List<Counter> allCounters = Counter.GetAll();
+      return View(allCounters);
     }
 
     [HttpGet("/counter/new")]
@@ -19,10 +20,10 @@ namespace WordCounter.Controllers
       return View();
     }
     [HttpPost("/counter")]
-     public ActionResult Create(string keyWord, string userSentence)
+     public ActionResult Create(string newKeyWord, string newSentence)
     {
-      Counter newCounter = new Counter(keyWord, userSentence);
-      return RedirectToAction("Index", newCounter);
+      Counter newCounter = new Counter(newKeyWord, newSentence);
+      return View("Show", newCounter);
     }
 
     [HttpGet("counter/{id}")]
@@ -32,11 +33,11 @@ namespace WordCounter.Controllers
       return View(count);
     }
 
-    // [HttpPost("/counter/delete")]
-    // public ActionResult DeleteAll()
-    // {
-    //   Counter.Clear();
-    //   return View();
-    // }
+    [HttpPost("/counter/delete")]
+    public ActionResult DeleteAll()
+    {
+      Counter.ClearAll();
+      return View();
+    }
   }
 }

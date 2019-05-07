@@ -45,6 +45,10 @@ namespace WordCounter.Models
     {
       return MatchList[searchId-1];
     }
+    public static List<Counter> GetAll()
+    {
+      return MatchList;
+    }
 
 
     //Test to check if the keyword is inside the sentence
